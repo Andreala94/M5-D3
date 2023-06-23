@@ -1,12 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import CommentModal from './CommentModal'
 
-const SingleCard = ({ img, title, price, btnTitle }) => {
+const SingleCard = ({  img, asin, title, price, category  }) => {
+
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const toggleCommentModal = () =>{
+        setModalVisible(!modalVisible);
+    }
     return (
-
+        <>
+        { modalVisible && <CommentModal />}
+          
         <Card 
         // className={ 'border border border-danger shadow-lg'}
          style={{ width: '18rem' }}
@@ -15,9 +24,12 @@ const SingleCard = ({ img, title, price, btnTitle }) => {
         <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Title>{price}</Card.Title>
-            <Button variant="primary">{btnTitle}</Button>
+            <Card.Title>{category}</Card.Title>
+            <Card.Title>{asin}</Card.Title>
+            <Button onClick={toggleCommentModal} variant="primary">Commenti</Button>
         </Card.Body>
     </Card>
+    </>
     )
 }
 
