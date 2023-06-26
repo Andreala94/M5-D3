@@ -11,7 +11,7 @@ const SingleCard = ({ img, asin, title, price, category }) => {
     const toggleCommentModal = () => {
         setModalVisible(!modalVisible);
     }
-    console.log("asin:"+ asin);
+    
     return (
         
         <>
