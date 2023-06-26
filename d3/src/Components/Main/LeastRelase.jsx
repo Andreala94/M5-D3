@@ -39,6 +39,7 @@ const LastRelase = () => {
                         return (
                             <SingleCard
                                 key={book.asin}
+                                asin={book.asin}
                                 img={book.img}
                                 title={book.title}
                                 price={book.price}
