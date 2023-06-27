@@ -38,7 +38,7 @@ const NavBar = ({ books, setBooks, getBooks }) => {
           <Nav.Link href="#">About</Nav.Link>
           <Nav.Link href="#">Browse</Nav.Link>
         </Nav>
-        <Form className="d-flex" onSubmit={filterBooks}>
+        <Form className="d-flex" onSubmit={filterBooks}  >
 
           <Form.Control 
             
