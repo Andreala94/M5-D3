@@ -6,14 +6,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-const NavBar = ({ books, setBooks, getBooks }) => {
+const NavBar = ({ books, setBooks, getBooksApi }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filterBooks = (e) => {
     
     e.preventDefault();
 
-    const filterBooks = books.filter((book) =>
+    const filterBooks = getBooksApi.filter((book) =>
       book.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -21,11 +21,15 @@ const NavBar = ({ books, setBooks, getBooks }) => {
   };
 
   const handleResetSearchBar = (value) => {
-    if (value === "") {
-      getBooks();
-    }
+   
+    // getBooksApi();
 
-    setSearchTerm(value);
+    setSearchTerm(value.target.value);
+
+
+    if (value === ""){
+      filterBooks(value);
+     }
   };
 
  
@@ -42,7 +46,7 @@ const NavBar = ({ books, setBooks, getBooks }) => {
 
           <Form.Control 
             
-            onChange={(e) => handleResetSearchBar(e.target.value)}
+            onChange={(e) => handleResetSearchBar(e)}
             type="text"
             placeholder="Search"
           />

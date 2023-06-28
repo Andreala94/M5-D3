@@ -44,9 +44,7 @@ const AddComment = ({ getMethod , asin }) => {
         }
     }
 
-    // useEffect(() => {
-	// 	handleSubmit();
-	// }, [asin]);
+
 
     return (
        
