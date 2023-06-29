@@ -58,7 +58,7 @@ const CommentModal = ({ close, asin }) => {
                                                     <div>Autore: {comment.author}</div>
 
                                                 </div>
-                                                <DeleteComment getMethod={getCommentModal} asin={comment._id} />
+                                                <DeleteComment  getMethod={getCommentModal} asin={comment._id} />
                                                 <ModificaComment getMethod={getCommentModal} comment={comment}  />
                                             </ListGroup.Item>
                                         ))}

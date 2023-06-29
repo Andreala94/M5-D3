@@ -38,7 +38,7 @@ const DeleteComment = ({ getMethod , asin }) => {
     }
 
     return (
-          <Button onClick={ DeleteComment} className="text-dark"  variant=" bg-danger">Delete </Button>
+          <Button onClick={ DeleteComment} className="text-dark me-2 fw-bold mt-2"  variant=" bg-danger">Delete </Button>
    )
 
 }

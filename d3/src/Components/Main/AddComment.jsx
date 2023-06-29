@@ -47,16 +47,18 @@ const AddComment = ({ getMethod , asin }) => {
 
 
     return (
-       
-        <Form className="d-flex" onSubmit={handleSubmit}>
+        <>
+        
+        <Form className="d-flex " onSubmit={handleSubmit}>
 
-
+        
             <Form.Control
-
+                className='me-1'
                 value={commentValue}
                 type="text"
                 onChange={(event) => setCommentValue(event.target.value)}
             />
+            
             <Form.Control
 
                 value={rateValue}
@@ -66,9 +68,9 @@ const AddComment = ({ getMethod , asin }) => {
             />
             
            
-            <Button className='ms-2 text-light' type='submit' variant="outline-success bg-primary">Aggiungi Commenti</Button>
+            <Button className='ms-2 text-light ' type='submit' variant="outline-success bg-primary">Aggiungi Commenti</Button>
         </Form>
-       
+       </>
     );
 
     

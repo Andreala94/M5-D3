@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, ListGroup, Modal, Form } from "react-bootstrap";
 
 
-const ModificaComment = ({ getMethod, comment }) => {
+const ModificaComment = ({ getMethod, comment, close }) => {
 
     const [commentValue, setCommentValue] = useState(comment.comment);
     const [rateValue, setRateValue] = useState(comment.rate);
@@ -76,7 +76,9 @@ const ModificaComment = ({ getMethod, comment }) => {
                                     />
 
 
-                                    <Button className='ms-2 text-light' type='submit' variant="outline-success bg-primary">Modifica Commenti</Button>
+                                    <Button className='ms-2 text-light ' type='submit' variant="outline-success bg-primary">Modifica Commenti</Button>
+                                    
+
                                 </Form>
 
 
@@ -96,8 +98,8 @@ const ModificaComment = ({ getMethod, comment }) => {
 
             )}
 
-            <Button onClick={toggleCommentModal} className="text-dark" variant=" bg-warning">modifica </Button>
-
+            <Button onClick={toggleCommentModal} className="text-dark fw-bold mt-2" variant=" bg-warning">Modifica </Button>
+           
 
         </>
 
