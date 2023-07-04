@@ -15,10 +15,6 @@ const AddComment = ({ getMethod , asin }) => {
         setCommentValue(event.target.value);
         setRateValue(event.target.value);
         
-        
-        console.log(rateValue);
-        console.log(commentValue);
-        
 
 
         try {

@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -7,32 +7,31 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 const NavBar = ({ books, setBooks, getBooksApi }) => {
+  
   const [searchTerm, setSearchTerm] = useState("");
 
   const filterBooks = (e) => {
-    
+
     e.preventDefault();
 
     const filterBooks = getBooksApi.filter((book) =>
-      book.title.toLowerCase().includes(searchTerm.toLowerCase())
+            book.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     setBooks(filterBooks);
   };
 
   const handleResetSearchBar = (value) => {
-   
-    // getBooksApi();
 
     setSearchTerm(value.target.value);
 
 
-    if (value === ""){
+    if (value === "") {
       filterBooks(value);
-     }
+    }
   };
 
- 
+
 
   return (
     <Navbar bg="primary" data-bs-theme="dark">
@@ -44,8 +43,8 @@ const NavBar = ({ books, setBooks, getBooksApi }) => {
         </Nav>
         <Form className="d-flex" onSubmit={filterBooks}  >
 
-          <Form.Control 
-            
+          <Form.Control
+
             onChange={(e) => handleResetSearchBar(e)}
             type="text"
             placeholder="Search"

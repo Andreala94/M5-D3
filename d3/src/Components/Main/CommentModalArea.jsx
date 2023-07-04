@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Button, ListGroup, Modal } from "react-bootstrap";
-import "../Main/CommentModal.css";
 import AddComment from "./AddComment";
 import DeleteComment from "./DeleteComment";
 import ModificaComment from "./ModificaComment";
