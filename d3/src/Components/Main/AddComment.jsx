@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import {  Form,  Button } from 'react-bootstrap';
 
 
+
 const AddComment = ({ getMethod , asin }) => {
 
     const [commentValue, setCommentValue] = useState('');
@@ -49,14 +50,14 @@ const AddComment = ({ getMethod , asin }) => {
 
         
             <Form.Control
-                className='me-1'
+                className='me-1  border-dark h-50 mt-3 '
                 value={commentValue}
                 type="text"
                 onChange={(event) => setCommentValue(event.target.value)}
             />
             
             <Form.Control
-
+                className='me-1  border-dark h-50 mt-3'
                 value={rateValue}
                 type="text"
                 onChange={(event) => setRateValue(event.target.value)}
@@ -64,7 +65,7 @@ const AddComment = ({ getMethod , asin }) => {
             />
             
            
-            <Button className='ms-2 text-light ' type='submit' variant="outline-success bg-primary">Aggiungi Commenti</Button>
+            <Button id='commenti' className='ms-2 text-light ' type='submit' >Add Commenti</Button>
         </Form>
        </>
     );

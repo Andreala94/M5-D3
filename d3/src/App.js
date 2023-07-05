@@ -1,10 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import './App.css';
 import NavBar from './Components/NavBar/NavBar';
 import Welcome from './Components/Welcome/welcome';
 import LastRelase from './Components/Main/LeastRelase';
 import Footer from './Components/Footer/footer';
 
+import { ThemeProvider } from "react-bootstrap";
+
+// export const getBooksContext = createContext();
 
 function App() {
 
@@ -37,10 +40,12 @@ function App() {
 
   return (
     <>
+    <ThemeProvider >
       <NavBar books={books} setBooks={setBooks} getBooksApi={libri}/>
       <Welcome />
       <LastRelase books={books} />
       <Footer />
+    </ThemeProvider>
     </>
   );
 }

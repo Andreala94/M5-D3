@@ -4,56 +4,63 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SingleCard from './SingleCard';
 import CommentBook from "./CommentBook";
-import  { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 
 
 const LastRelase = ({ books }) => {
 
-   const  [idCommenti, setIdCommenti] = useState("")
-    
+    const [idCommenti, setIdCommenti] = useState("")
 
-   useEffect(() => {
-    
-    
 
-}, []);
+    useEffect(() => {
+
+
+
+    }, []);
 
 
     return (
-       <>
-       
-        <Container className="d-flex">
-            <Row>  
-                <Col className='d-flex flex-wrap gap-3 '>
-                   
-                    {
-                    books.map((book) => {
-                        return (
-                            <SingleCard
-                                key={nanoid()}
-                                asin={book.asin}
-                                img={book.img}
-                                title={book.title}
-                                price={book.price}
-                                category={book.category}
-                                setIdCommenti={setIdCommenti}
-                                idCommenti={idCommenti}
-                            />
-                        )
-                    })}
+        <>
 
-                </Col>
+            <Container className="d-flex">
+                <Row>
+                    <Col
+                        style={{ maxHeight: "1000px" }}
+                        lg={8}
+                        md={8}
+                        sm={6}
+                        xs={6}
 
-                <Col>
-                 <p>Commenti</p>
-                 <CommentBook asin={idCommenti} />
-                 
-                </Col>
-            </Row>
-        </Container>
+                        className='d-flex flex-wrap gap-3 overflow-auto'>
 
-        
-       </>
+                        {
+                            books.map((book) => {
+                                return (
+                                    <SingleCard
+                                        key={nanoid()}
+                                        asin={book.asin}
+                                        img={book.img}
+                                        title={book.title}
+                                        price={book.price}
+                                        category={book.category}
+                                        setIdCommenti={setIdCommenti}
+                                        idCommenti={idCommenti}
+                                    />
+                                )
+                            })}
+
+                    </Col>
+
+                    <Col >
+                        <p>Commenti</p>
+                        <CommentBook asin={idCommenti} />
+
+                    </Col>
+                </Row>
+            </Container>
+
+
+        </>
     )
 }
 export default LastRelase

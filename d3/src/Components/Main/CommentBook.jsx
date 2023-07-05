@@ -42,7 +42,7 @@ const CommentBook = ({ asin }) => {
             bookComments.map((comment) => (
               
                 <ListGroup.Item key={comment._id}>
-                    <div className="ms-2 me-auto">
+                    <div>
                         <div>{comment.comment}</div>
                         <div>Voto: {comment.rate}</div>
                         <div>Autore: {comment.author}</div>

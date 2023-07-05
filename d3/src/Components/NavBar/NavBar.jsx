@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -6,10 +6,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-const NavBar = ({ books, setBooks, getBooksApi }) => {
-  
-  const [searchTerm, setSearchTerm] = useState("");
+import { ThemeContext } from './ThemeProvider';
 
+
+const NavBar = ({ books, setBooks, getBooksApi }) => {
+
+  
+  const myThemeContext = useContext(ThemeContext);
+  const { theme , toggleTheme} = ThemeContext;
+  console.log(theme);
+ 
+
+  const [searchTerm, setSearchTerm] = useState("");
+  
   const filterBooks = (e) => {
 
     e.preventDefault();
@@ -34,7 +43,7 @@ const NavBar = ({ books, setBooks, getBooksApi }) => {
 
 
   return (
-    <Navbar bg="primary" data-bs-theme="dark">
+    <Navbar bg="primary" data-bs-theme="dark" sticky='top'>
       <Container fluid className='mx-0'>
         <Nav className="me-auto">
           <Nav.Link href="#">Home</Nav.Link>
@@ -50,6 +59,7 @@ const NavBar = ({ books, setBooks, getBooksApi }) => {
             placeholder="Search"
           />
           <Button className='ms-2' type='submit' variant="outline-success bg-info">Cerca</Button>
+          <Button onClick={toggleTheme}  className='ms-2' type='submit' variant="outline-success bg-info">Modalità</Button>
         </Form>
 
       </Container>

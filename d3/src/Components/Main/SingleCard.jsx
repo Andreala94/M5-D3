@@ -14,16 +14,14 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
     }
 
     const toggleCommenti = () => {
-        console.log(idCommenti);
-        console.log(asin);
+        
         setIdCommenti(asin);
-        console.log(idCommenti);
     }
-    useEffect(() => {
-        console.log("id commento: " + idCommenti);
+    // useEffect(() => {
+    //     console.log("id commento: " + idCommenti);
         
 
-    }, []);
+    // }, []);
 
 
 
@@ -31,11 +29,11 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
         
         <>
 
-            <Card style={{ width: '18rem' }} >
+            <Card style={{ width: '13rem' }} >
                 <Card.Img className="h-75" variant="top" src={img} />
                 <Card.Body >
                     <Card.Title>{title}</Card.Title>
-                    <Card.Title>{price}</Card.Title>
+                    <Card.Title>€ {price}</Card.Title>
                     <Card.Title>{category}</Card.Title>
                     
                     {/* <Button onClick={toggleCommentModal}  variant="primary ">Commenti</Button> */}
