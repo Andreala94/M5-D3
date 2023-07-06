@@ -5,6 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { Image } from 'react-bootstrap';
+import './NavBar.css';
 
 import { ThemeContext } from './ThemeProvider';
 
@@ -46,6 +48,7 @@ const NavBar = ({ books, setBooks, getBooksApi }) => {
     <Navbar bg="primary" data-bs-theme="dark" sticky='top'>
       <Container fluid className='mx-0'>
         <Nav className="me-auto">
+        <Image className='logo' src="https://png.pngtree.com/template/20190420/ourmid/pngtree-book-logo-template-design--book-logo-with-modern-frame-image_143635.jpg" alt="Logo" />
           <Nav.Link href="#">Home</Nav.Link>
           <Nav.Link href="#">About</Nav.Link>
           <Nav.Link href="#">Browse</Nav.Link>

@@ -1,35 +1,15 @@
-// import React from 'react';
-// import HomePage from './Pages/HomePage';
-
-
-// function App ()  {
-//   return (
-//     <BrowserRouter>
-//     <Routes>
-//        <Route exact path='/' element={<HomePage/>}>
-          
-//        </Route>
-//     </Routes>
-    
-//     </BrowserRouter>
-//   )
-// }
-
-// export default App;
-
-
 import React, {useState, useEffect, useContext} from "react";
-import './App.css';
-import NavBar from './Components/NavBar/NavBar';
-import Welcome from './Components/Welcome/welcome';
-import LastRelase from './Components/Main/LeastRelase';
-import Footer from './Components/Footer/footer';
+import '../App.css';
+import NavBar from '../Components/NavBar/NavBar';
+import Welcome from '../Components/Welcome/welcome';
+import LastRelase from '../Components/Main/LeastRelase';
+import Footer from '../Components/Footer/footer';
 
-import { ThemeProvider } from "react-bootstrap";
+import { ThemeProvider } from "../Components/NavBar/ThemeProvider";
 
 // export const getBooksContext = createContext();
 
-function App() {
+function HomePage() {
 
   const [books, setBooks] = useState([]);
 
@@ -70,4 +50,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;

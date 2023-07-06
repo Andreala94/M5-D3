@@ -1,15 +1,13 @@
 
-/* .carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
+
+   .carosello{
+    text-align: center;
     
-  }
-  
-  .carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-   */
+   }
+   .carousel-control-next-icon{
+    background-color: rgb(20, 210, 210);
+   }
+
+   .carousel-control-prev-icon{
+    background-color: rgb(20, 210, 210);
+   }

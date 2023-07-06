@@ -14,8 +14,6 @@ const LastRelase = ({ books }) => {
 
     useEffect(() => {
 
-
-
     }, []);
 
 
@@ -52,7 +50,7 @@ const LastRelase = ({ books }) => {
                     </Col>
 
                     <Col >
-                        <p>Commenti</p>
+                        <p>Area Commenti:</p>
                         <CommentBook asin={idCommenti} />
 
                     </Col>

@@ -12,7 +12,9 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
     const [buttonBorder, setButtonBorder] = useState(false);
 
     const toggleBorder = () =>{
+        console.log('button border:'+ buttonBorder);
         setButtonBorder(!buttonBorder);
+        console.log('button border:'+ buttonBorder);
     }
 
     const toggleCommentModal = () => {
@@ -24,13 +26,23 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
         setIdCommenti(asin);
     }
    
+    const allToggle = () =>{
+        toggleBorder();
+        toggleCommenti();
+    }
 
+    
+    useEffect(() => {
+        console.log('button border ue:'+ buttonBorder);
+   
+
+    }, [buttonBorder]);
 
     return (
         
         <>
  
-            <Card style={{ width: '13rem',  }} className={buttonBorder ? "border-danger" : ""}  >
+            <Card style={{ width: '13rem',  }} className={buttonBorder ? "border-danger" : ""} onClick={toggleBorder} >
                 <Card.Img className="h-75" variant="top" src={img} />
                 <Card.Body >
                     <Card.Title>{title}</Card.Title>
@@ -38,7 +50,8 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
                     <Card.Title>{category}</Card.Title>
                     
                     {/* <Button onClick={toggleCommentModal}  variant="primary ">Commenti</Button> */}
-                    <Button onClick={{toggleCommenti, toggleBorder}}   variant="primary ">Commenti</Button>
+                    <Button onClick={allToggle}  variant="primary ">Commenti</Button>
+                    <Button className="mt-2">Dettagli</Button>
                 </Card.Body>
             </Card>
             {modalVisible && (
