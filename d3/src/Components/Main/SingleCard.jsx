@@ -3,11 +3,17 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CommentModal from './CommentModalArea'
 import CommentBook from "./CommentBook";
+import './SingleCard.css';
 
 
 const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommenti }) => {
 
     const [modalVisible, setModalVisible] = useState(false);
+    const [buttonBorder, setButtonBorder] = useState(false);
+
+    const toggleBorder = () =>{
+        setButtonBorder(!buttonBorder);
+    }
 
     const toggleCommentModal = () => {
         setModalVisible(!modalVisible);
@@ -17,19 +23,14 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
         
         setIdCommenti(asin);
     }
-    // useEffect(() => {
-    //     console.log("id commento: " + idCommenti);
-        
-
-    // }, []);
-
+   
 
 
     return (
         
         <>
-
-            <Card style={{ width: '13rem' }} >
+ 
+            <Card style={{ width: '13rem',  }} className={buttonBorder ? "border-danger" : ""}  >
                 <Card.Img className="h-75" variant="top" src={img} />
                 <Card.Body >
                     <Card.Title>{title}</Card.Title>
@@ -37,7 +38,7 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
                     <Card.Title>{category}</Card.Title>
                     
                     {/* <Button onClick={toggleCommentModal}  variant="primary ">Commenti</Button> */}
-                    <Button onClick={toggleCommenti}  variant="primary ">Commenti</Button>
+                    <Button onClick={{toggleCommenti, toggleBorder}}   variant="primary ">Commenti</Button>
                 </Card.Body>
             </Card>
             {modalVisible && (
