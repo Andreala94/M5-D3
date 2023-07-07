@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import CommentModal from './CommentModalArea'
 import CommentBook from "./CommentBook";
 import './SingleCard.css';
+import { Link } from "react-router-dom";
 
 
 const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommenti }) => {
@@ -50,8 +51,11 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
                     <Card.Title>{category}</Card.Title>
                     
                     {/* <Button onClick={toggleCommentModal}  variant="primary ">Commenti</Button> */}
-                    <Button onClick={allToggle}  variant="primary ">Commenti</Button>
+                    <Link to={`/book/${asin}`}>  
                     <Button className="mt-2">Dettagli</Button>
+                    </Link>
+                    <Button onClick={allToggle}  variant="primary ">Commenti</Button>
+                   
                 </Card.Body>
             </Card>
             {modalVisible && (
