@@ -16,7 +16,7 @@ const NavBar = ({ books, setBooks, getBooksApi }) => {
   
   const myThemeContext = useContext(ThemeContext);
   const { theme , toggleTheme} = ThemeContext;
-  console.log(theme);
+ 
  
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,6 +49,7 @@ const NavBar = ({ books, setBooks, getBooksApi }) => {
       <Container fluid className='mx-0'>
         <Nav className="me-auto">
         <Image className='logo' src="https://png.pngtree.com/template/20190420/ourmid/pngtree-book-logo-template-design--book-logo-with-modern-frame-image_143635.jpg" alt="Logo" />
+        
           <Nav.Link href="#">Home</Nav.Link>
           <Nav.Link href="#">About</Nav.Link>
           <Nav.Link href="#">Browse</Nav.Link>

@@ -18,7 +18,7 @@ const DeleteComment = ({ getMethod , asin }) => {
             const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${asin}`, {
                 method: 'DELETE',
                 headers: {
-                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk1YmQ1MzlhOGZmMDAwMTRhYjI5NmEiLCJpYXQiOjE2ODc1MzUwNTUsImV4cCI6MTY4ODc0NDY1NX0.V3RRpY9zgtDu2m4Ws3QMClXQ5h_eO4iuOQ3vxun-hhM',
+                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk1YmQ1MzlhOGZmMDAwMTRhYjI5NmEiLCJpYXQiOjE2ODg3NTU1NTUsImV4cCI6MTY4OTk2NTE1NX0.CmklpVOu5RF7aVkH6jkcu-rAg_KmVAXK_1qr1aJy1kM',
                     'Content-Type': 'application/json'
                 },
                

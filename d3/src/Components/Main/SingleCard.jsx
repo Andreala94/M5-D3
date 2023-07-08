@@ -14,7 +14,9 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
 
     const toggleBorder = () =>{
         console.log('button border:'+ buttonBorder);
+
         setButtonBorder(!buttonBorder);
+
         console.log('button border:'+ buttonBorder);
     }
 
@@ -28,8 +30,9 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
     }
    
     const allToggle = () =>{
+        toggleCommenti()
         toggleBorder();
-        toggleCommenti();
+        
     }
 
     
@@ -43,7 +46,7 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
         
         <>
  
-            <Card style={{ width: '13rem',  }} className={buttonBorder ? "border-danger" : ""} onClick={toggleBorder} >
+            <Card style={{ width: '13rem',  }} className={buttonBorder ? "border-danger" : ""} >
                 <Card.Img className="h-75" variant="top" src={img} />
                 <Card.Body >
                     <Card.Title>{title}</Card.Title>
@@ -54,7 +57,7 @@ const SingleCard = ({ img, asin, title, price, category, setIdCommenti, idCommen
                     <Link to={`/book/${asin}`}>  
                     <Button className="mt-2">Dettagli</Button>
                     </Link>
-                    <Button onClick={allToggle}  variant="primary ">Commenti</Button>
+                    <Button className="mt-1" onClick={toggleCommenti}  variant="primary ">Commenti</Button>
                    
                 </Card.Body>
             </Card>
