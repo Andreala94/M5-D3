@@ -7,3 +7,5 @@ export const ErrorPage = () => {
     </div>
   )
 }
+
+//Creaiamo la pagina di errore che verra visualizzata quando non ci saranno piu pagine da aprire

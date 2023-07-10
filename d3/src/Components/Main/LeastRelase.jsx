@@ -19,7 +19,7 @@ const LastRelase = ({ books }) => {
 
     return (
         <>
-
+          {/* Creamo un container con due colonne, la prima mostra i libri e la seconda i commenti che ci servono */}
             <Container className="d-flex">
                 <Row>
                     <Col
@@ -31,6 +31,8 @@ const LastRelase = ({ books }) => {
 
                         className='d-flex flex-wrap gap-3 overflow-auto'>
 
+                        {/* Mappiamo ogni singolo libbro e gli passiamo i valori che vorremmo a video e glieli passiamo dentro il componente
+                        Single Card creato */}
                         {
                             books.map((book) => {
                                 return (

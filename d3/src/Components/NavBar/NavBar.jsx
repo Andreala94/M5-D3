@@ -10,6 +10,7 @@ import './NavBar.css';
 
 import { ThemeContext } from './ThemeProvider';
 
+//Creaiamo componente NavBar con la ricerca del filtro di ogni libbro
 
 const NavBar = ({ books, setBooks, getBooksApi }) => {
 
@@ -17,10 +18,10 @@ const NavBar = ({ books, setBooks, getBooksApi }) => {
   const myThemeContext = useContext(ThemeContext);
   const { theme , toggleTheme} = ThemeContext;
  
- 
 
   const [searchTerm, setSearchTerm] = useState("");
   
+  //Creiamo la funzione per il filtro della ricerca del libbro
   const filterBooks = (e) => {
 
     e.preventDefault();
@@ -31,7 +32,7 @@ const NavBar = ({ books, setBooks, getBooksApi }) => {
 
     setBooks(filterBooks);
   };
-
+ // funzione per prendere il valore dall'imput
   const handleResetSearchBar = (value) => {
 
     setSearchTerm(value.target.value);
@@ -54,10 +55,11 @@ const NavBar = ({ books, setBooks, getBooksApi }) => {
           <Nav.Link href="#">About</Nav.Link>
           <Nav.Link href="#">Browse</Nav.Link>
         </Nav>
-        <Form className="d-flex" onSubmit={filterBooks}  >
+        {/* Al form fli passiamo la ricerca del libbro richiamando la funzione */}
+        <Form className="d-flex" onSubmit={filterBooks}  > 
 
           <Form.Control
-
+             // prendiamo il valore in input
             onChange={(e) => handleResetSearchBar(e)}
             type="text"
             placeholder="Search"

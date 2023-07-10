@@ -7,7 +7,7 @@ import AddComment from "./AddComment";
 const CommentBook = ({ asin }) => {
     const [bookComments, setBookComments] = useState(null);
    
-
+    //Creamo la Fetch per prendere i commenti di ogni singolo libbro passandoli l'asin
     const getCommentModal = async () => {
    
    if( asin!==""){
@@ -40,7 +40,7 @@ const CommentBook = ({ asin }) => {
         <ListGroup className="d-flex justify-content-between align-items-start" as="ol" numbered>
         {bookComments &&
             bookComments.map((comment) => (
-              
+              //Visuralizziamo i valori che ci servono di ogni singolo libbro Mappandalo
                 <ListGroup.Item key={comment._id}>
                     <div>
                         <div>{comment.comment}</div>
@@ -48,7 +48,8 @@ const CommentBook = ({ asin }) => {
                         <div>Autore: {comment.author}</div>
 
                     </div>
-                    <DeleteComment  getMethod={getCommentModal} asin={comment._id} />
+                    {/* Passiamo i componenti DELETE, MODIFICA E AGGIUNGI creati a parte e gli passiamo ciò che ci serve */}
+                    <DeleteComment  getMethod={getCommentModal} asin={comment._id} /> 
                     <ModificaComment getMethod={getCommentModal} comment={comment}  />
                     <AddComment asin={asin} getMethod={getCommentModal} />
                 </ListGroup.Item>

@@ -5,17 +5,19 @@ import {  Form,  Button } from 'react-bootstrap';
 
 const AddComment = ({ getMethod , asin }) => {
 
+    // Settiamo i due imput a stringa vuota
     const [commentValue, setCommentValue] = useState('');
     const [rateValue, setRateValue] = useState('');
     
 
-
+    // Prendiamo il valore dai due imput richiamando l'evento di funzione nel Form 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         setCommentValue(event.target.value);
         setRateValue(event.target.value);
         
+        //Facciamo la chimata Fetch prendendo  valori asin e i due degli input 
 
 
         try {
@@ -45,8 +47,8 @@ const AddComment = ({ getMethod , asin }) => {
 
     return (
         <>
-        
-        <Form className="d-flex " onSubmit={handleSubmit}>
+        {/* Richiamiamo la funzione  per settare i valori e riempirgli dagli imput */}
+        <Form className="d-flex " onSubmit={handleSubmit}> 
 
         
             <Form.Control

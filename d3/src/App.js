@@ -6,7 +6,7 @@ import { ErrorPage } from "./Pages/ErrorPage";
 import { BookDetalis } from "../src/Components/Main/BookDetalis";
 
 
-
+ //Creaiamo la funzione principale passandogli le rotte delle pagine
 function App() {
 
   
@@ -20,7 +20,7 @@ function App() {
               <Route path="/book/:bookid" element={<BookDetalis />} />
 
               
-
+              {/* L'ultima pagina e quella di errore con * ciò sta a significare che quando non ci saranno piu pagine da visualizzare entra in funzione questa */}
               <Route path="*" element={<ErrorPage />}/>
             </Route>
         </Routes>

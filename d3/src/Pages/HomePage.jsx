@@ -10,6 +10,8 @@ import { ThemeProvider } from "../Components/NavBar/ThemeProvider";
 
 // export const getBooksContext = createContext();
 
+
+// creaiamo la funzione per la Home Page dove gli passiamo la get tramite fetch di tutti i libbri e richiamiamo i vari componente da visualizzare
 function HomePage() {
 
   const [books, setBooks] = useState([]);
@@ -43,7 +45,8 @@ function HomePage() {
 
   return (
     <>
-    <ThemeProvider >
+    {/* Theme Provider è strutturato con lo useContext  */}
+    <ThemeProvider > 
       <NavBar books={books} setBooks={setBooks} getBooksApi={libri}/>
       <Welcome />
       <LastRelase books={books} />

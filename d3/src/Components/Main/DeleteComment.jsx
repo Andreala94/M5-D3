@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Button } from 'react-bootstrap';
 
-const DeleteComment = ({ getMethod , asin }) => {
+const DeleteComment = ({ getMethod , asin }) => { //Passiamo come props l'id del libro(asin) e la funzione getMethod
+
     const [commentValue, setCommentValue] = useState('');
     const [rateValue, setRateValue] = useState('')
 
-
+    //Creaiamo la funzione del DELETE dei commenti 
 
     const DeleteComment = async (event) => {
         event.preventDefault();
